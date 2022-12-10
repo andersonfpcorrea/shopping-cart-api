@@ -1,5 +1,6 @@
 package me.dio.sacola.resource;
 
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import me.dio.sacola.model.Cart;
 import me.dio.sacola.model.Item;
@@ -7,13 +8,14 @@ import me.dio.sacola.resource.dto.ItemDto;
 import me.dio.sacola.service.CartService;
 import org.springframework.web.bind.annotation.*;
 
+@Api(value = "/cart")
 @RestController
 @RequestMapping("/cart")
 @RequiredArgsConstructor
 public class CartResource {
     private final CartService cartService;
 
-    @PostMapping
+    @PostMapping("/")
     public Item insertItem(@RequestBody ItemDto itemDto) {
         return cartService.insertItem(itemDto);
     };
