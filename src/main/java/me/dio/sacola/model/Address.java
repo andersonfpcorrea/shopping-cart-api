@@ -6,13 +6,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 
 @AllArgsConstructor
 @Builder
 @Data
-@Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Embeddable
 @NoArgsConstructor
 public class Address {
     private String cep;
